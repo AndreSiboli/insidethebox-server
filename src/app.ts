@@ -1,6 +1,5 @@
 //------------------------------------- Imports -------------------------------------
 import express, { Request, Response } from 'express';
-
 import cookieParser from 'cookie-parser';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
@@ -11,14 +10,12 @@ import question from './routes/question';
 import login from './routes/login';
 import addQuestions from './routes/addQuestions';
 
-//------------------------------------- Middlewares -------------------------------------
-import { verifyToken } from './shared/services/verifyUser';
-
 //------------------------------------- Setting -------------------------------------
 dotenv.config();
 const app = express();
 
-const url = 'http://localhost:5173'; //https://insidethebox.onrender.com
+const url = 'https://insidethebox.onrender.com'; 
+//http://localhost:5173
 
 const corsOptions = {
     origin: url,
