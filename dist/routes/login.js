@@ -68,7 +68,6 @@ router.post('/register', (req, res) => __awaiter(void 0, void 0, void 0, functio
 }));
 router.post('/login', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const user = yield (0, verifyUser_1.verifyUser)(req.body);
-    console.log(user);
     if (!user)
         return res.json({ err: 'Email ou senha inválido.' });
     const JWTData = {
@@ -97,7 +96,7 @@ router.post('/logout', (req, res) => __awaiter(void 0, void 0, void 0, function*
         return true;
     })
         .catch((err) => {
-        console.log('Falha ao se desconectar.'); //
+        console.log('Falha ao se desconectar.');
     });
     if (data)
         return res.json({ response: true });
@@ -142,7 +141,6 @@ router.post('/token', (req, res) => __awaiter(void 0, void 0, void 0, function* 
             res.json({ err: 'Ocorreu um erro' });
         else
             res.json({ token, refreshToken });
-        console.log(datas);
     }
     catch (err) {
         console.log('Refresh Token Inválido');

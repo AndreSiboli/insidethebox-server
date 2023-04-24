@@ -22,12 +22,11 @@ const cors_1 = __importDefault(require("cors"));
 const question_1 = __importDefault(require("./routes/question"));
 const login_1 = __importDefault(require("./routes/login"));
 const addQuestions_1 = __importDefault(require("./routes/addQuestions"));
-//------------------------------------- Middlewares -------------------------------------
-const verifyUser_1 = require("./shared/services/verifyUser");
 //------------------------------------- Setting -------------------------------------
 dotenv_1.default.config();
 const app = (0, express_1.default)();
-const url = 'http://localhost:5173'; //https://insidethebox.onrender.com
+const url = 'https://insidethebox.onrender.com';
+//http://localhost:5173
 const corsOptions = {
     origin: url,
     credentials: true,
@@ -53,9 +52,6 @@ mongoose_1.default
 app.get('/is-on', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     res.send('On');
 }));
-app.post('/test-token', verifyUser_1.verifyToken, (req, res) => {
-    res.send('certo');
-});
 app.use('/question', question_1.default);
 app.use('/login', login_1.default);
 app.use('/add', addQuestions_1.default);

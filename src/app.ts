@@ -14,7 +14,7 @@ import addQuestions from './routes/addQuestions';
 dotenv.config();
 const app = express();
 
-const url = 'https://insidethebox.onrender.com'; 
+const url = 'https://insidethebox.onrender.com';
 //http://localhost:5173
 
 const corsOptions = {

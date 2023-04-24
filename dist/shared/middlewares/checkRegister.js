@@ -69,7 +69,6 @@ function checkEmail(email) {
         return false;
     if (((_b = domain.match(/[.]/g)) === null || _b === void 0 ? void 0 : _b.length) === 1) {
         const [typeMail, dot] = domain.split('.');
-        console.log(typeMail, dot);
         if (typeMail.length <= 1)
             return false;
         for (let i = 0; i < typeMail.length; i++) {
